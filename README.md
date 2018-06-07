@@ -22,7 +22,7 @@
 
 5. For going Live, please add the following to the ProGuard file:
 
-	* AndroidManifest.xml
+	* proguard-rules.pro
 
 		#### -keepclassmembers class com.paytm.pgsdk.PaytmWebView$PaytmJavaScriptInterface {
 		####   public *;
@@ -106,10 +106,10 @@ ANDROID
 		
 		#### //Getting the Service Instance. PaytmPGService.getStagingService() will return //the Service pointing to staging environment.
 		#### //and PaytmPGService.getProductionService() will return the Service pointing to //production environment.
-		#### PaytmPGService Service = null;
-		#### Service = PaytmPGService.getStagingService();
+		#### PaytmPGService Service = null;
+		#### Service = PaytmPGService.getStagingService();
 		#### or
-		#### Service = PaytmPGService.getProductionService();
+		#### Service = PaytmPGService.getProductionService();
 		#### //Create new order Object having all order information.
 		#### Map<String, String> paramMap = new HashMap<String,String>();
 		#### paramMap.put( "MID" , "PAYTM_MERCHANT_ID");
@@ -127,7 +127,7 @@ ANDROID
 		#### //For example, if suppose client.p12 is stored in raw folder, then filename must be client.
 		#### PaytmClientCertificate Certificate = new PaytmClientCertificate ("password" , "filename" );
 		#### //Set PaytmOrder and PaytmClientCertificate Object. Call this method and set both objects before starting transaction.
-		#### Service.initialize(Order, Certificate);
+		#### Service.initialize(Order, Certificate);
 		#### //OR
 		#### Service.initialize(Order, null);
 		#### //Start the Payment Transaction. Before starting the transaction ensure that initialize method is called.
